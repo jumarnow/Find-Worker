@@ -7,6 +7,7 @@ import 'package:myapp/config/enums.dart';
 import 'package:myapp/config/session.dart';
 import 'package:myapp/pages/dashboard.dart';
 import 'package:myapp/pages/get_started_page.dart';
+import 'package:myapp/pages/list_worker_page.dart';
 import 'package:myapp/pages/sign_in_page.dart';
 import 'package:myapp/pages/sign_up_page.dart';
 
@@ -65,6 +66,11 @@ class MyApp extends StatelessWidget {
                 return const Dashboard();
               },
             );
+          },
+          AppRoute.listWorker.name: (context) {
+            String category =
+                ModalRoute.of(context)!.settings.arguments as String;
+            return ListWorkerPage(category: category);
           },
         });
   }
