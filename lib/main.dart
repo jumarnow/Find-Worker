@@ -5,11 +5,14 @@ import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/appwrite.dart';
 import 'package:myapp/config/enums.dart';
 import 'package:myapp/config/session.dart';
+import 'package:myapp/models/worker_model.dart';
+import 'package:myapp/pages/booking_page.dart';
 import 'package:myapp/pages/dashboard.dart';
 import 'package:myapp/pages/get_started_page.dart';
 import 'package:myapp/pages/list_worker_page.dart';
 import 'package:myapp/pages/sign_in_page.dart';
 import 'package:myapp/pages/sign_up_page.dart';
+import 'package:myapp/pages/worker_profile_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -71,6 +74,16 @@ class MyApp extends StatelessWidget {
             String category =
                 ModalRoute.of(context)!.settings.arguments as String;
             return ListWorkerPage(category: category);
+          },
+          AppRoute.workerProfile.name: (context) {
+            WorkerModel worker =
+                ModalRoute.of(context)!.settings.arguments as WorkerModel;
+            return WorkerProfilePage(worker: worker);
+          },
+          AppRoute.booking.name: (context) {
+            WorkerModel worker =
+                ModalRoute.of(context)!.settings.arguments as WorkerModel;
+            return BookingPage(worker: worker);
           },
         });
   }

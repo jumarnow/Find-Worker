@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:myapp/config/app_color.dart';
 import 'package:myapp/config/app_format.dart';
 import 'package:myapp/config/appwrite.dart';
+import 'package:myapp/config/enums.dart';
 import 'package:myapp/controllers/list_worker_controller.dart';
 import 'package:myapp/models/worker_model.dart';
 import 'package:myapp/widgets/header_worker.dart';
@@ -226,7 +227,13 @@ class _ListWorkerPageState extends State<ListWorkerPage> {
             itemBuilder: (context, index) {
               WorkerModel item = list[index];
               return GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(
+                    context,
+                    AppRoute.workerProfile.name,
+                    arguments: item,
+                  );
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
