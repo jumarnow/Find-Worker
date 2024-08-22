@@ -7,6 +7,7 @@ import 'package:myapp/config/enums.dart';
 import 'package:myapp/config/session.dart';
 import 'package:myapp/models/worker_model.dart';
 import 'package:myapp/pages/booking_page.dart';
+import 'package:myapp/pages/checkout_page.dart';
 import 'package:myapp/pages/dashboard.dart';
 import 'package:myapp/pages/get_started_page.dart';
 import 'package:myapp/pages/list_worker_page.dart';
@@ -85,6 +86,7 @@ class MyApp extends StatelessWidget {
                 ModalRoute.of(context)!.settings.arguments as WorkerModel;
             return BookingPage(worker: worker);
           },
+          AppRoute.checkout.name: (context) => const CheckoutPage(),
         });
   }
 }
