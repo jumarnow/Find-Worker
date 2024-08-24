@@ -13,6 +13,7 @@ import 'package:myapp/pages/get_started_page.dart';
 import 'package:myapp/pages/list_worker_page.dart';
 import 'package:myapp/pages/sign_in_page.dart';
 import 'package:myapp/pages/sign_up_page.dart';
+import 'package:myapp/pages/success_booking_page.dart';
 import 'package:myapp/pages/worker_profile_page.dart';
 
 void main() {
@@ -87,6 +88,7 @@ class MyApp extends StatelessWidget {
             return BookingPage(worker: worker);
           },
           AppRoute.checkout.name: (context) => const CheckoutPage(),
+          AppRoute.successBooking.name: (context) => const SuccessBookingPage(),
         });
   }
 }

@@ -14,7 +14,7 @@ class BookingDatasource {
           collectionId: Appwrite.collectionBooking,
           queries: [
             Query.equal('worker_id', workerId),
-            Query.equal('status', 'inProgress'),
+            Query.equal('status', 'In Progress'),
             Query.orderDesc('\$updatedAt'),
           ]);
 

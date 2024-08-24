@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/config/app_info.dart';
+import 'package:myapp/config/enums.dart';
 import 'package:myapp/datasources/booking_datasource.dart';
 import 'package:myapp/models/booking_model.dart';
 
@@ -42,7 +43,7 @@ class CheckoutController extends GetxController {
     BookingDatasource.checkout(bookingDetail).then((value) {
       loading = false;
       value.fold((message) => AppInfo.failed(context, message), (data) {
-        AppInfo.success(context, 'Booking Success');
+        Navigator.pushNamed(context, AppRoute.successBooking.name);
       });
     });
   }
