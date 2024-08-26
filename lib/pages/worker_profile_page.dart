@@ -43,7 +43,12 @@ class _WorkerProfilePageState extends State<WorkerProfilePage> {
       bottomNavigationBar: Obx(() {
         String recruiterId = workerProfileController.recruiterId;
         if (recruiterId == '') {
-          return DView.loadingCircle();
+          return UnconstrainedBox(
+            child: Padding(
+              padding: const EdgeInsets.all(20),
+              child: DView.loadingCircle(),
+            ),
+          );
         }
         if (recruiterId == 'Available') {
           return hiredNow();
@@ -291,8 +296,8 @@ class _WorkerProfilePageState extends State<WorkerProfilePage> {
             width: 166,
             child: SecondaryButton(
               onPressed: () {
-                // Navigator.pushNamed(context, AppRoute.booking.name,
-                //     arguments: widget.worker);
+                Navigator.pushNamed(context, AppRoute.booking.name,
+                    arguments: widget.worker);
               },
               child: const Text('Not Available'),
             ),
